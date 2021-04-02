@@ -24,9 +24,9 @@ namespace Business.Concrete
             _operationDal.Delete(operation);
         }
 
-        public Operation Get()
+        public Operation GetById(int Id)
         {
-            throw new NotImplementedException();
+           return _operationDal.Get(o => o.Id == Id);
         }
 
         public List<Operation> GetAll()
