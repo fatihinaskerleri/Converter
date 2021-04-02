@@ -7,7 +7,7 @@ namespace Entities.Concrete
 {
     public class Operation:IEntity
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
         public string Foto { get; set; }
         public string IpAdresi { get; set; }
         public string Response { get; set; }
