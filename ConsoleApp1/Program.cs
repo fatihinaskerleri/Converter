@@ -12,6 +12,7 @@ namespace ConsoleApp1
             foreach (var operation in operationManager.GetAll())
             {
                 Console.WriteLine(operation.YuklenenFormat);
+                Console.WriteLine("github denemesi");
             }
         }
     }
