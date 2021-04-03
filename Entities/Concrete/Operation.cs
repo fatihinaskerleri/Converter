@@ -14,5 +14,9 @@ namespace Entities.Concrete
         public string IstekResponseSure { get; set; }
         public string YuklenenFormat { get; set; }
         public string DonusturulenFormat { get; set; }
+
+        
+
+
     }
 }
