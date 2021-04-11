@@ -35,7 +35,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Operation>> GetAll()
         {
-            return new SuccessDataResult<List<Operation>>(_operationDal.GetAll(), Messages.OperationAdded);
+            return new SuccessDataResult<List<Operation>>(_operationDal.GetAll(), Messages.OperationListed);
         }
 
         public IDataResult<List<Operation>> GetAllByResponse(string response)
