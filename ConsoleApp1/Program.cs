@@ -9,10 +9,17 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             OperationManager operationManager = new OperationManager(new EfOperationDal());
-            foreach (var operation in operationManager.GetAll())
+            var result = operationManager.GetAll();
+            if (result.Success)
             {
-                Console.WriteLine(operation.YuklenenFormat);
-                Console.WriteLine("github denemesi");
+                foreach (var operation in result.Data)
+                {
+                    Console.WriteLine(operation.YuklenenFormat);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,11 +8,11 @@ namespace Business.Abstract
 {
     public interface IOperationService
     {
-        List<Operation> GetAll();
-        Operation GetById(int Id);
-        List<Operation> GetAllByResponse(string response);
-        void Add(Operation operation);
-        void Delete(Operation operation); 
-        void Update(Operation operation);
+        IDataResult<List<Operation>> GetAll();
+        IDataResult<Operation> GetById(int Id);
+        IDataResult<List<Operation>> GetAllByResponse(string response);
+        IResult Add(Operation operation);
+        IResult Delete(Operation operation);
+        IResult Update(Operation operation);
     }
 }

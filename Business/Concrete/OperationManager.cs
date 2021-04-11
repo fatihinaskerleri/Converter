@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -14,34 +16,37 @@ namespace Business.Concrete
         {
             _operationDal = operationDal;
         }
-        public void Add(Operation operation)
+        public IResult Add(Operation operation)
         {
             _operationDal.Add(operation);
+            return new SuccessResult(Messages.OperationAdded);
         }
 
-        public void Delete(Operation operation)
+        public IResult Delete(Operation operation)
         {
             _operationDal.Delete(operation);
+            return new SuccessResult(Messages.OperationDeleted);
         }
 
-        public Operation GetById(int Id)
+        public IDataResult<Operation> GetById(int Id)
         {
-           return _operationDal.Get(o => o.Id == Id);
+            return new SuccessDataResult<Operation>(_operationDal.Get(o => o.Id == Id), Messages.OperationListed);
         }
 
-        public List<Operation> GetAll()
+        public IDataResult<List<Operation>> GetAll()
         {
-            return _operationDal.GetAll();
+            return new SuccessDataResult<List<Operation>>(_operationDal.GetAll(), Messages.OperationAdded);
         }
 
-        public List<Operation> GetAllByResponse(string response)
+        public IDataResult<List<Operation>> GetAllByResponse(string response)
         {
-            return _operationDal.GetAll(o=>o.Response==response);
+            return new SuccessDataResult<List<Operation>>(_operationDal.GetAll(o => o.Response == response), Messages.OperationListed);
         }
 
-        public void Update(Operation operation)
+        public IResult Update(Operation operation)
         {
             _operationDal.Update(operation);
+            return new SuccessResult(Messages.OperationUpdated);
         }
     }
 }
