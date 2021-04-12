@@ -1,8 +1,12 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,6 +20,8 @@ namespace Business.Concrete
         {
             _operationDal = operationDal;
         }
+
+        [ValidationAspect(typeof(OperationValidator))]
         public IResult Add(Operation operation)
         {
             _operationDal.Add(operation);
@@ -42,7 +48,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Operation>>(_operationDal.GetAll(o => o.Response == response), Messages.OperationListed);
         }
-
+         
         public IResult Update(Operation operation)
         {
             _operationDal.Update(operation);
