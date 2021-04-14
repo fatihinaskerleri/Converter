@@ -15,8 +15,5 @@ namespace Entities.Concrete
         public string YuklenenFormat { get; set; }
         public string DonusturulenFormat { get; set; }
 
-        
-
-
     }
 }
