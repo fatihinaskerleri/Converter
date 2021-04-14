@@ -3,6 +3,7 @@ using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -24,6 +25,12 @@ namespace Business.Concrete
         [ValidationAspect(typeof(OperationValidator))]
         public IResult Add(Operation operation)
         {
+           IResult result= BusinessRules.Run();
+
+            if (result != null)
+            {
+                return result;
+            }
             _operationDal.Add(operation);
             return new SuccessResult(Messages.OperationAdded);
         }
@@ -54,5 +61,6 @@ namespace Business.Concrete
             _operationDal.Update(operation);
             return new SuccessResult(Messages.OperationUpdated);
         }
+    
     }
 }
