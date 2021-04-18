@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -22,6 +23,7 @@ namespace Business.Concrete
             _operationDal = operationDal;
         }
 
+        [SecuredOperation("admin")]
         [ValidationAspect(typeof(OperationValidator))]
         public IResult Add(Operation operation)
         {
@@ -55,7 +57,8 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Operation>>(_operationDal.GetAll(o => o.Response == response), Messages.OperationListed);
         }
-         
+
+        [ValidationAspect(typeof(OperationValidator))]
         public IResult Update(Operation operation)
         {
             _operationDal.Update(operation);

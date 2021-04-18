@@ -9,7 +9,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Concrete.EF
+namespace DataAccess.Concrete.Entity_Framework
 {
     public class EfOperationDal : EfEntityRepositoryBase<Operation,ConverterContext>,IOperationDal
     {
