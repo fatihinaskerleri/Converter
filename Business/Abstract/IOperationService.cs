@@ -11,7 +11,7 @@ namespace Business.Abstract
         IDataResult<List<Operation>> GetAll();
         IDataResult<Operation> GetById(int Id);
         IDataResult<List<Operation>> GetAllByResponse(string response);
-        IResult Add(Operation operation);
+        IDataResult<string> Add(Operation operation);
         IResult Delete(Operation operation);
         IResult Update(Operation operation);
     }

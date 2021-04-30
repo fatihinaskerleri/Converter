@@ -12,6 +12,8 @@ using Entities.Concrete;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Text;
 using System.Threading;
 
@@ -25,19 +27,19 @@ namespace Business.Concrete
             _operationDal = operationDal;
         }
 
-        [SecuredOperation("admin")]
+      
         [ValidationAspect(typeof(OperationValidator))]
         [PerformanceAspect(5)]
-        public IResult Add(Operation operation)
+        public IDataResult<string> Add(Operation operation)
         {
-           IResult result= BusinessRules.Run();
+            IDataResult<string> result = BusinessRules.Run(Convert(operation.Foto));
 
             if (result != null)
             {
                 return result;
             }
             _operationDal.Add(operation);
-            return new SuccessResult(Messages.OperationAdded);
+            return new SuccessDataResult<string>(Messages.OperationAdded);
         }
 
         [SecuredOperation("admin")]
@@ -78,6 +80,25 @@ namespace Business.Concrete
             _operationDal.Update(operation);
             return new SuccessResult(Messages.OperationUpdated);
         }
-    
+        private IDataResult<string> Convert(string url)
+        {
+            System.Drawing.Image bmpImageToConvert = Image.FromFile(url);
+            Image bmpNewImage = new Bitmap(bmpImageToConvert.Width,
+                                           bmpImageToConvert.Height);
+            Graphics gfxNewImage = Graphics.FromImage(bmpNewImage);
+            gfxNewImage.DrawImage(bmpImageToConvert,
+                                  new Rectangle(0, 0, bmpNewImage.Width,
+                                                bmpNewImage.Height),
+                                  0, 0,
+                                  bmpImageToConvert.
+                                  Width, bmpImageToConvert.Height,
+                                  GraphicsUnit.Pixel);
+            gfxNewImage.Dispose();
+            bmpImageToConvert.Dispose();
+
+
+            bmpNewImage.Save(@"C:\Users\sueda\Desktop\resim\flower.png", ImageFormat.Png);
+            return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\flower.png");
+        }
     }
 }
