@@ -32,14 +32,14 @@ namespace Business.Concrete
         [PerformanceAspect(5)]
         public IDataResult<string> Add(Operation operation)
         {
-            IDataResult<string> result = BusinessRules.Run(Convert(operation.Foto));
+            IDataResult<string> result = BusinessRules.Run(Convert(operation.Foto,operation.DonusturulenFormat));
 
             if (result != null)
             {
-                return result;
+                _operationDal.Add(operation);
+                return new SuccessDataResult<string>(result.Data,result.Message); 
             }
-            _operationDal.Add(operation);
-            return new SuccessDataResult<string>(Messages.OperationAdded);
+            return new ErrorDataResult<string>(null, Messages.NotConvert);
         }
 
         [SecuredOperation("admin")]
@@ -80,7 +80,7 @@ namespace Business.Concrete
             _operationDal.Update(operation);
             return new SuccessResult(Messages.OperationUpdated);
         }
-        private IDataResult<string> Convert(string url)
+        private IDataResult<string> Convert(string url, string donusturulecekTur)
         {
             System.Drawing.Image bmpImageToConvert = Image.FromFile(url);
             Image bmpNewImage = new Bitmap(bmpImageToConvert.Width,
@@ -95,10 +95,28 @@ namespace Business.Concrete
                                   GraphicsUnit.Pixel);
             gfxNewImage.Dispose();
             bmpImageToConvert.Dispose();
-
-
-            bmpNewImage.Save(@"C:\Users\sueda\Desktop\resim\flower.png", ImageFormat.Png);
-            return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\flower.png");
+            if (donusturulecekTur == ImageFormat.Jpeg.ToString())
+            {
+                bmpNewImage.Save(@"C:\Users\sueda\Desktop\resim\flower.jpeg", ImageFormat.Jpeg);
+                return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\flower.jpeg", Messages.Convert);
+            }
+            if (donusturulecekTur == ImageFormat.Png.ToString())
+            {
+                bmpNewImage.Save(@"C:\Users\sueda\Desktop\resim\flower.png", ImageFormat.Png);
+                return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\flower.png", Messages.Convert);
+            }
+            if (donusturulecekTur == ImageFormat.Gif.ToString())
+            {
+                bmpNewImage.Save(@"C:\Users\sueda\Desktop\resim\flower.gif", ImageFormat.Gif);
+                return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\flower.gif", Messages.Convert);
+            }
+            if (donusturulecekTur == ImageFormat.Tiff.ToString())
+            {
+                bmpNewImage.Save(@"C:\Users\sueda\Desktop\resim\flower.tiff", ImageFormat.Tiff);
+                return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\flower.tiff", Messages.Convert);
+            }
+            return new ErrorDataResult<string>( Messages.NotConvert);
         }
+        
     }
 }

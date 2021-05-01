@@ -56,11 +56,11 @@ namespace WebAPI.Controllers
         public IActionResult Add(Operation operation)
         {
             var result = _operationService.Add(operation);
-            if (result.Success)
+            if (result != null)
             {
                 return Ok(result);
             }
-            return BadRequest(result);
+            return BadRequest(result.Message);
         }
 
         [HttpPost("delete")]
