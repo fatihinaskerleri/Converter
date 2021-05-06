@@ -10,6 +10,9 @@ using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using FluentValidation;
+using GroupDocs.Conversion;
+using GroupDocs.Conversion.FileTypes;
+using GroupDocs.Conversion.Options.Convert;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -82,41 +85,70 @@ namespace Business.Concrete
         }
         private IDataResult<string> Convert(string url, string donusturulecekTur)
         {
-            System.Drawing.Image bmpImageToConvert = Image.FromFile(url);
-            Image bmpNewImage = new Bitmap(bmpImageToConvert.Width,
-                                           bmpImageToConvert.Height);
-            Graphics gfxNewImage = Graphics.FromImage(bmpNewImage);
-            gfxNewImage.DrawImage(bmpImageToConvert,
-                                  new Rectangle(0, 0, bmpNewImage.Width,
-                                                bmpNewImage.Height),
-                                  0, 0,
-                                  bmpImageToConvert.
-                                  Width, bmpImageToConvert.Height,
-                                  GraphicsUnit.Pixel);
-            gfxNewImage.Dispose();
-            bmpImageToConvert.Dispose();
-            if (donusturulecekTur == ImageFormat.Jpeg.ToString())
+
+            using (Converter converter = new Converter(url))
             {
-                bmpNewImage.Save(@"C:\Users\sueda\Desktop\resim\flower.jpeg", ImageFormat.Jpeg);
-                return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\flower.jpeg", Messages.Convert);
+                if (donusturulecekTur == ImageFileType.Gif.ToString())
+                {
+                    ImageConvertOptions options = new ImageConvertOptions
+                    {
+                        Format = ImageFileType.Gif
+                    };
+                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.gif", options);
+                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.gif", Messages.Convert);
+                }
+
+                if (donusturulecekTur == ImageFileType.Jp2.ToString())
+                {
+                    ImageConvertOptions options = new ImageConvertOptions
+                    {
+                        Format = ImageFileType.Jp2
+                    };
+                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.jp2", options);
+                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.jp2", Messages.Convert);
+                }
+
+                if (donusturulecekTur == ImageFileType.Jpeg.ToString())
+                {
+                    ImageConvertOptions options = new ImageConvertOptions
+                    {
+                        Format = ImageFileType.Jpeg
+                    };
+                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.jpg", options);
+                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.jpg", Messages.Convert);
+                }
+
+                if (donusturulecekTur == ImageFileType.Png.ToString())
+                {
+                    ImageConvertOptions options = new ImageConvertOptions
+                    {
+                        Format = ImageFileType.Png
+                    };
+                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.png", options);
+                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.png", Messages.Convert);
+                }
+
+                if (donusturulecekTur == ImageFileType.Tiff.ToString())
+                {
+                    ImageConvertOptions options = new ImageConvertOptions
+                    {
+                        Format = ImageFileType.Tiff
+                    };
+                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.tiff", options);
+                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.tiff", Messages.Convert);
+                }
+
+                if (donusturulecekTur == ImageFileType.Webp.ToString())
+                {
+                    ImageConvertOptions options = new ImageConvertOptions
+                    {
+                        Format = ImageFileType.Webp
+                    };
+                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.webp", options);
+                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.webp", Messages.Convert);
+                }
+                return new ErrorDataResult<string>(Messages.NotConvert);
             }
-            if (donusturulecekTur == ImageFormat.Png.ToString())
-            {
-                bmpNewImage.Save(@"C:\Users\sueda\Desktop\resim\flower.png", ImageFormat.Png);
-                return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\flower.png", Messages.Convert);
-            }
-            if (donusturulecekTur == ImageFormat.Gif.ToString())
-            {
-                bmpNewImage.Save(@"C:\Users\sueda\Desktop\resim\flower.gif", ImageFormat.Gif);
-                return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\flower.gif", Messages.Convert);
-            }
-            if (donusturulecekTur == ImageFormat.Tiff.ToString())
-            {
-                bmpNewImage.Save(@"C:\Users\sueda\Desktop\resim\flower.tiff", ImageFormat.Tiff);
-                return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\flower.tiff", Messages.Convert);
-            }
-            return new ErrorDataResult<string>( Messages.NotConvert);
+           }
         }
-        
-    }
 }
