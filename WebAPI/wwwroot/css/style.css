@@ -1,0 +1,304 @@
+@import url("reset.css");
+body,
+html {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+body {
+  background-color: #f8f8f8;
+  overflow: hidden;
+  position: relative;
+}
+
+body .top {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
+}
+
+body .top h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+body .top .slider {
+  max-width: 700px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Next & previous buttons */
+  /* Slideshow container */
+  /* Next & previous buttons */
+  /* On hover, add a black background color with a little bit see-through */
+  /* Fading animation */
+  /* On smaller screens, decrease text size */
+}
+
+body .top .slider .mySlides {
+  display: none;
+}
+
+body .top .slider img {
+  height: 200px;
+  max-width: 80%;
+  border-radius: 10px;
+  margin: auto;
+}
+
+body .top .slider .slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+body .top .slider .prev,
+body .top .slider .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #707070;
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body .top .slider .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+body .top .slider .prev:hover,
+body .top .slider .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+body .top .slider .active {
+  background-color: #717171;
+}
+
+body .top .slider .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  body .top .slider .prev,
+  body .top .slider .next,
+  body .top .slider .text {
+    font-size: 11px;
+  }
+}
+
+body .top .slider .controls {
+  display: none;
+}
+
+body .bottom {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto 0 auto;
+  width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .bottom .upload {
+  max-width: 120px;
+  height: 80px;
+  cursor: pointer;
+}
+
+body .bottom .custom-select {
+  position: relative;
+  font-family: Arial;
+  margin-right: 15px;
+}
+
+body .bottom .custom-select select {
+  display: none;
+}
+
+body .bottom .select-selected {
+  background-color: #5b6169;
+  border-radius: 7px;
+}
+
+body .bottom .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+body .bottom .select-selected .select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+body .bottom .select-items div,
+body .bottom .select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+body .bottom .select-items {
+  position: absolute;
+  background-color: #5b6169;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 7px;
+}
+
+body .bottom .select-hide {
+  display: none;
+}
+
+body .bottom .select-items div:hover,
+body .bottom .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body .download {
+  width: 50%;
+  background-color: #23a1a1;
+  color: #f8ecec;
+  margin: 0 auto auto auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 2px solid rgba(0, 0, 0, 0.644);
+  padding: 8px 0;
+}
+
+body .download a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+body .hidden {
+  display: none;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loader img {
+  margin: auto;
+  width: 200px;
+}
+/*# sourceMappingURL=style.css.map */

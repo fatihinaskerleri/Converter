@@ -1,0 +1,248 @@
+@import url("reset.css");
+body,
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+$background-color: #1157c0;
+$background-color: #5b6169;
+body {
+  background-color: #f8f8f8;
+  overflow: hidden;
+  position: relative;
+  .top {
+    background-color: #fff;
+    display: flex;
+    margin-top: 100px;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+    h1 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .slider {
+      max-width: 700px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      
+      /* Next & previous buttons */
+      .mySlides {
+        display: none;
+      }
+      img {
+        
+        height: 200px;
+        max-width: 80%;
+        border-radius: 10px;
+        margin: auto;
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: rgb(112, 112, 112);
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        color:#fff;
+      }
+      .active {
+        background-color: #717171;
+      }
+
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1s;
+        display: flex;
+      }
+
+      @-webkit-keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px;
+        }
+      }
+      .controls{
+          display: none;
+      }
+    }
+  }
+  .bottom {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto 0 auto;
+    width: 50%;
+    justify-content: center;
+    .upload {
+      max-width: 120px;
+      height: 80px;
+      cursor: pointer;
+    }
+
+    .custom-select {
+      position: relative;
+      font-family: Arial;
+      margin-right: 15px;
+    }
+
+    .custom-select {
+      select {
+        display: none;
+      }
+    }
+
+    .select-selected {
+      background-color: $background-color;
+      border-radius: 7px;
+    }
+
+    .select-selected:after {
+      position: absolute;
+      content: "";
+      top: 14px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-color: #fff transparent transparent transparent;
+    }
+
+    .select-selected {
+      .select-arrow-active:after {
+        border-color: transparent transparent #fff transparent;
+        top: 7px;
+      }
+    }
+
+    .select-items div,
+    .select-selected {
+      color: #ffffff;
+      padding: 8px 16px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .select-items {
+      position: absolute;
+      background-color: $background-color;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      border-radius: 7px;
+    }
+
+    .select-hide {
+      display: none;
+    }
+
+    .select-items div:hover,
+    .same-as-selected {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+  .download {
+    width: 50%;
+    background-color: rgb(35, 161, 161);
+    color: rgb(248, 236, 236);
+    margin: 0 auto auto auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid rgba(0, 0, 0, 0.644);
+    padding: 8px 0;
+    a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+  }
+  .hidden {
+    display: none;
+  }
+}
+.loader{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  img{
+    margin: auto;
+    width: 200px;
+  }
+}

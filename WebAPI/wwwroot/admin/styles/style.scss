@@ -1,0 +1,210 @@
+@import url('reset.css');
+body,html{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+$font-color:#245373;
+body{
+    background-color: #F8F8F8;
+    
+    .loader{
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        display: flex;
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        img{
+          margin: auto;
+          width: 200px;
+        }
+      }
+    .login{
+
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        border-radius: 14px;
+        padding: 40px 48px;
+        box-shadow: rgba(85, 86, 145,.16) 0px 14px 53px;
+        align-items: center;
+        h3{
+            color: $font-color;
+            margin-bottom: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px auto 30px auto;
+        }
+        .input{
+            max-width: 200px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-top: 16px;
+            margin-bottom: 23px;
+            p{
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                font-size: 14px;
+                font-weight:500;
+                color: $font-color;
+            }
+            input{
+                border-radius: 5px;
+                border:  1px solid #E5E5E5;
+                width: 192px;
+                padding: 4px;
+                color: $font-color;
+                text-indent: 5px;
+            }
+            
+        }
+        .login-btn{
+            border-radius: 5px;
+            border:  1px solid transparent;
+            background-color: #1997F0;
+            color: #FFFFFF;
+            width: 192px;
+            padding: 4px;
+            &:hover{
+                background-color: darken($color: #1997F0, $amount: 5);
+            }
+        }
+    }
+    main
+    {
+        margin: auto;
+        width: 690px;
+        height: 70%;
+        background-color: #FFFFFF;  
+        border-radius: 10px;      
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        color: $font-color;
+
+        #title{
+            font-size: 22px;
+            font-weight: 900;
+            margin: 12px auto;
+        }
+
+        .logout{
+            height: 30px;
+            width: 30px;
+            position:  absolute;
+            top: 12px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .menu{
+            position: sticky;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+            .item{
+                img{
+                    width: 20px;
+                    
+                }
+                &:first-child{
+                    margin-left: auto;
+                }
+            }
+        }
+
+        .content{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow-y: scroll;
+            max-height: 100%;
+            /* width */
+        &::-webkit-scrollbar {
+            width: 5px;
+            
+        }
+        
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+            .box{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .options{
+                    display: flex;
+                    flex-direction: row;
+                }
+                a{
+                    text-decoration: none;
+                    color: blue;
+                    .down-btn{
+                        width: 20px;
+                        height: 20px;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                &:nth-child(4n)
+                {
+                    margin-right: 20px;
+                }
+                &:nth-child(4n-3)
+                {
+                    margin-left: 20px;
+                }
+                img{
+                    display: flex;
+                    flex-direction: column;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 5px;
+                    margin: 6px 5px;
+                    
+                    
+                    
+                        max-width: 150px;
+                        height: 150px;
+                        border-radius: 5px;
+                    
+    
+                }
+            }
+        }
+
+        
+    }
+}

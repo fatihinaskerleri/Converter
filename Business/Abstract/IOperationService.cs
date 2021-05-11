@@ -9,9 +9,11 @@ namespace Business.Abstract
     public interface IOperationService
     {
         IDataResult<List<Operation>> GetAll();
+
+        
         IDataResult<Operation> GetById(int Id);
         IDataResult<List<Operation>> GetAllByResponse(string response);
-        IDataResult<string> Add(Operation operation);
+        IDataResult<string> Add(Operation operation, string fileName);
         IResult Delete(Operation operation);
         IResult Update(Operation operation);
     }

@@ -24,6 +24,7 @@ namespace Business.Concrete
 {
     public class OperationManager : IOperationService
     {
+        public string Server = "https://localhost:44331/";
         IOperationDal _operationDal;
         public OperationManager(IOperationDal operationDal)
         {
@@ -33,12 +34,14 @@ namespace Business.Concrete
       
         [ValidationAspect(typeof(OperationValidator))]
         [PerformanceAspect(5)]
-        public IDataResult<string> Add(Operation operation)
+        public IDataResult<string> Add(Operation operation, string uniqueString)
         {
-            IDataResult<string> result = BusinessRules.Run(Convert(operation.Foto,operation.DonusturulenFormat));
+            
+            IDataResult<string> result = BusinessRules.Run(Convert(operation.Foto,operation.DonusturulenFormat, uniqueString));
 
             if (result != null)
             {
+                operation.Foto = uniqueString + "." + operation.DonusturulenFormat;
                 _operationDal.Add(operation);
                 return new SuccessDataResult<string>(result.Data,result.Message); 
             }
@@ -60,14 +63,14 @@ namespace Business.Concrete
             return new SuccessDataResult<Operation>(_operationDal.Get(o => o.Id == Id), Messages.OperationListed);
         }
 
-        [SecuredOperation("admin")]
+        //[SecuredOperation("admin")]
         [PerformanceAspect(5)]
         public IDataResult<List<Operation>> GetAll()
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(500);
             return new SuccessDataResult<List<Operation>>(_operationDal.GetAll(), Messages.OperationListed);
         }
-
+        
         [SecuredOperation("admin")]
         [PerformanceAspect(5)]
         public IDataResult<List<Operation>> GetAllByResponse(string response)
@@ -83,9 +86,9 @@ namespace Business.Concrete
             _operationDal.Update(operation);
             return new SuccessResult(Messages.OperationUpdated);
         }
-        private IDataResult<string> Convert(string url, string donusturulecekTur)
+        private IDataResult<string> Convert(string url, string donusturulecekTur, string uniqueString)
         {
-
+            donusturulecekTur = donusturulecekTur.ToLower();
             using (Converter converter = new Converter(url))
             {
                 if (donusturulecekTur == ImageFileType.Gif.ToString())
@@ -94,58 +97,75 @@ namespace Business.Concrete
                     {
                         Format = ImageFileType.Gif
                     };
-                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.gif", options);
-                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.gif", Messages.Convert);
+                    converter.Convert(@"wwwroot/converted/" + uniqueString + ".gif", options);
+                    System.IO.File.Delete(url);
+                    return new SuccessDataResult<string>(Server + "converted/" + uniqueString + ".gif", Messages.Convert);
                 }
 
-                if (donusturulecekTur == ImageFileType.Jp2.ToString())
+                else if (donusturulecekTur == ImageFileType.Jp2.ToString().ToLower())
                 {
                     ImageConvertOptions options = new ImageConvertOptions
                     {
                         Format = ImageFileType.Jp2
                     };
-                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.jp2", options);
-                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.jp2", Messages.Convert);
+                    converter.Convert(@"wwwroot/converted/" + uniqueString + ".jp2", options);
+                    System.IO.File.Delete(url);
+                    return new SuccessDataResult<string>(Server + "converted/" + uniqueString + "a.jp2", Messages.Convert);
                 }
 
-                if (donusturulecekTur == ImageFileType.Jpeg.ToString())
+                else if (donusturulecekTur == "jpg")
                 {
                     ImageConvertOptions options = new ImageConvertOptions
                     {
                         Format = ImageFileType.Jpeg
                     };
-                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.jpg", options);
-                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.jpg", Messages.Convert);
+                    converter.Convert(@"wwwroot/converted/" + uniqueString + ".jpg", options);
+                    System.IO.File.Delete(url);
+                    return new SuccessDataResult<string>(Server + "converted/" + uniqueString + ".jpg", Messages.Convert);
                 }
 
-                if (donusturulecekTur == ImageFileType.Png.ToString())
+                else if (donusturulecekTur == "jpeg")
+                {
+                    ImageConvertOptions options = new ImageConvertOptions
+                    {
+                        Format = ImageFileType.Jpeg
+                    };
+                    converter.Convert(@"wwwroot/converted/" + uniqueString + ".jpeg", options);
+                    System.IO.File.Delete(url);
+                    return new SuccessDataResult<string>(Server + "converted/" + uniqueString + ".jpeg", Messages.Convert);
+                }
+
+                else if (donusturulecekTur == ImageFileType.Png.ToString().ToLower())
                 {
                     ImageConvertOptions options = new ImageConvertOptions
                     {
                         Format = ImageFileType.Png
                     };
-                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.png", options);
-                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.png", Messages.Convert);
+                    converter.Convert(@"wwwroot/converted/" + uniqueString + ".png", options);
+                    System.IO.File.Delete(url);
+                    return new SuccessDataResult<string>(Server + "converted/" + uniqueString + ".png", Messages.Convert);
                 }
 
-                if (donusturulecekTur == ImageFileType.Tiff.ToString())
+                else if (donusturulecekTur == ImageFileType.Tiff.ToString().ToLower())
                 {
                     ImageConvertOptions options = new ImageConvertOptions
                     {
                         Format = ImageFileType.Tiff
                     };
-                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.tiff", options);
-                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.tiff", Messages.Convert);
+                    converter.Convert(@"wwwroot/converted/" + uniqueString + ".tiff", options);
+                    System.IO.File.Delete(url);
+                    return new SuccessDataResult<string>(Server + "converted/" + uniqueString + ".tiff", Messages.Convert);
                 }
 
-                if (donusturulecekTur == ImageFileType.Webp.ToString())
+                else if (donusturulecekTur == ImageFileType.Webp.ToString().ToLower())
                 {
                     ImageConvertOptions options = new ImageConvertOptions
                     {
                         Format = ImageFileType.Webp
                     };
-                    converter.Convert(@"C:\Users\sueda\Desktop\resim\a.webp", options);
-                    return new SuccessDataResult<string>(@"C:\Users\sueda\Desktop\resim\a.webp", Messages.Convert);
+                    converter.Convert(@"wwwroot/converted/" + uniqueString + ".webp", options);
+                    System.IO.File.Delete(url);
+                    return new SuccessDataResult<string>(Server + "converted/" + uniqueString + ".webp", Messages.Convert);
                 }
                 return new ErrorDataResult<string>(Messages.NotConvert);
             }

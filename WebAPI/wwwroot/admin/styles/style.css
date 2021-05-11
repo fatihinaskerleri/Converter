@@ -1,0 +1,281 @@
+@import url("reset.css");
+body, html {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+body {
+  background-color: #F8F8F8;
+}
+
+body .loader {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .loader img {
+  margin: auto;
+  width: 200px;
+}
+
+body .login {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  padding: 40px 48px;
+  -webkit-box-shadow: rgba(85, 86, 145, 0.16) 0px 14px 53px;
+          box-shadow: rgba(85, 86, 145, 0.16) 0px 14px 53px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .login h3 {
+  color: #245373;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px auto 30px auto;
+}
+
+body .login .input {
+  max-width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  padding-top: 16px;
+  margin-bottom: 23px;
+}
+
+body .login .input p {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #245373;
+}
+
+body .login .input input {
+  border-radius: 5px;
+  border: 1px solid #E5E5E5;
+  width: 192px;
+  padding: 4px;
+  color: #245373;
+  text-indent: 5px;
+}
+
+body .login .login-btn {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: #1997F0;
+  color: #FFFFFF;
+  width: 192px;
+  padding: 4px;
+}
+
+body .login .login-btn:hover {
+  background-color: #0f8ae1;
+}
+
+body main {
+  margin: auto;
+  width: 690px;
+  height: 70%;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  color: #245373;
+}
+
+body main #title {
+  font-size: 22px;
+  font-weight: 900;
+  margin: 12px auto;
+}
+
+body main .logout {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  cursor: pointer;
+}
+
+body main .menu {
+  position: -webkit-sticky;
+  position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+body main .menu .item img {
+  width: 20px;
+}
+
+body main .menu .item:first-child {
+  margin-left: auto;
+}
+
+body main .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-y: scroll;
+  max-height: 100%;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+body main .content::-webkit-scrollbar {
+  width: 5px;
+}
+
+body main .content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body main .content::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+body main .content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body main .content .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .content .box .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body main .content .box a {
+  text-decoration: none;
+  color: blue;
+}
+
+body main .content .box a .down-btn {
+  width: 20px;
+  height: 20px;
+}
+
+body main .content .box a:focus {
+  outline: none;
+}
+
+body main .content .box:nth-child(4n) {
+  margin-right: 20px;
+}
+
+body main .content .box:nth-child(4n-3) {
+  margin-left: 20px;
+}
+
+body main .content .box img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  margin: 6px 5px;
+  max-width: 150px;
+  height: 150px;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=style.css.map */
