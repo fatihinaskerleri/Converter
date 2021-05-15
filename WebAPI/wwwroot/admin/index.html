@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel | Giriş</title>
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/jqueryui/jquery-ui.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/admin/styles/style.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="/admin/js/index.js"></script>
@@ -13,6 +18,18 @@
     <div class="loader" id="loading">
         <img src="/img/rings.svg" alt="" >
     </div>
+    <header class="navbar navbar-expand-md navbar-dark">
+        <button onclick="navbar();" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <a class="navbar-brand" href="index.html"> <span class="text-warning">Fotoğraf</span> <span class="text-white">Dönüştürücü</span> </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"> <a class="nav-link" href="index.html">Anasayfa <span class="sr-only">(current)</span></a> </li>
+            
+            <li class="nav-item active"> <a class="nav-link " href="/convert.html">Dönüştürme İşlemleri</a> </li>
+           
+          </ul>
+        </div>
+      </header>
     <div class="login unselectable">
         <h3>Devam etmek için giriş yapın</h3>
         <div class="input">
@@ -24,7 +41,7 @@
             <input type="password" name="" id="pass" placeholder="">
         </div>
         
-        <button onclick="submit();" class="login-btn">Giriş Yap</button>
+        <button type="submit" onclick="submit();" class="login-btn">Giriş Yap</button>
     </div>
 </body>
 </html>

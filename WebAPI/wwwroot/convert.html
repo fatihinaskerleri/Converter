@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="Tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Resim Dönüştürücü</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="jqueryui/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <!-- -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+    
+</head>
+<body class="unselectable">
+     <div class="loader" id="loading">
+        <img src="img/rings.svg" alt="" >
+     </div>
+     <header class="navbar navbar-expand-md navbar-dark">
+        <button onclick="navbar();" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <a class="navbar-brand" href="index.html"> <span class="text-warning">Fotoğraf</span> <span class="text-white">Dönüştürücü</span> </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"> <a class="nav-link" href="index.html">Anasayfa <span class="sr-only">(current)</span></a> </li>
+            
+            <li class="nav-item"> <a class="nav-link " href="/about.html">Hakkımızda</a> </li>
+            <li class="nav-item active"> <a class="nav-link " href="#">Dönüştürme İşlemleri</a> </li>
+           
+          </ul>
+        </div>
+      </header>
+    <div class="top">
+        <h1>Son Yüklenenler</h1>
+            <div class="slider">
+                <div id="light-slider" class="slideshow-container">
+                  
+                </div>
+                    <a class="prev controls" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next controls" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+    </div>
+    <div id="bottom" class="bottom bottom-radius">
+        
+        <div class="select-box">
+            <label>Dönüştürülecek Tür:</label>
+            
+              <select id="extension" >
+                <option value="jpg">JPG</option>
+                <option value="jpeg">JPEG</option>
+                <option value="png">PNG</option>
+                <option value="gif">GIF</option>
+                <option value="tiff">TIFF</option>
+                <option value="jp2">JP2</option>
+                <option value="webp">WEBP</option>
+              </select>
+            
+            
+        </div>
+            
+    
+        <img src="img/upload.svg" alt="" class="upload" onclick="upload()">
+        <form id="files"><input type="file" id="image" class="hidden" onchange="submitForm()"/></form>
+    </div>
+    <div class="download hidden">
+        Dosya başarıyla <span id="converted"></span>dönüştürüldü. İndirmek için<a id="download" href="" download>&nbsp;Tıklayın</a>
+    </div>
+</body>
+</html>

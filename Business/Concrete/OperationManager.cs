@@ -98,6 +98,7 @@ namespace Business.Concrete
                         Format = ImageFileType.Gif
                     };
                     converter.Convert(@"wwwroot/converted/" + uniqueString + ".gif", options);
+                    // bu kısımda dosya silinmeden önce convert edilen dosya ve orjinal dosya arasındaki boyut farkı hesaplanabilir.
                     System.IO.File.Delete(url);
                     return new SuccessDataResult<string>(Server + "converted/" + uniqueString + ".gif", Messages.Convert);
                 }

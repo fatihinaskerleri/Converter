@@ -1,4 +1,5 @@
 var ServerIp = "https://localhost:44331";
+
 var slideIndex = 1;
 
 
@@ -26,13 +27,15 @@ function showSlides(n) {
   
 }
 $(document).ready(function () {
-  
+  //alert();
+  document.getElementById("extension").value = window.localStorage.getItem('currentExtension');
+  window.localStorage.setItem('currentExtension', 'jpg');
   var counter = 0;
   $.getJSON(ServerIp + "/api/operations/Getall", function (result) {
     $.each(result.data.reverse(), function (i, field) {
       if(field.donusturulenFormat !="jp2" && field.donusturulenFormat !="tiff"  ){
 
-        if(counter >=4)
+        if(counter >=10)
         {
           document.getElementById("loading").style.display = "none";
           document.getElementsByClassName("controls")[0].style.display = "block";
@@ -45,7 +48,7 @@ $(document).ready(function () {
         let slide =
           '<div class="mySlides fade"><img src="/converted/'+field.foto+'" style="width:100%"></div>';
   
-        document.getElementById("light-slider").innerHTML = slide+ document.getElementById("light-slider").innerHTML;
+        document.getElementById("light-slider").innerHTML += slide;
         
       }
       
@@ -71,6 +74,7 @@ function upload() {
 
 function submitForm() {
   document.getElementsByClassName("download")[0].classList.add("hidden");
+  document.getElementById("bottom").classList.add("bottom-radius");
   var formdata = new FormData();
   var files = $("#image")[0].files;
   let extension = document.getElementById("extension").value
@@ -88,14 +92,20 @@ function submitForm() {
       method: 'POST',
       type: 'POST',
       success: function (response) {
-        console.log(response)
+        document.getElementById("files").reset();
+        
         if (response.success) {
           document.getElementById("download").href=response.data;
           document.getElementById("converted").innerHTML = "&nbsp;"+extension+"&nbsp;uzantısına&nbsp;";
           
-          setTimeout(function(){ document.getElementsByClassName("download")[0].classList.remove("hidden"); document.getElementById("loading").style.display = "none"; }, 1000);
+          setTimeout(function(){ 
+            document.getElementsByClassName("download")[0].classList.remove("hidden"); 
+            document.getElementsByClassName("download")[0].classList.add("bottom-radius"); 
+            document.getElementById("bottom").classList.remove("bottom-radius");
+            document.getElementById("loading").style.display = "none"; 
+          }, 1000);
         } else {
-          alert("Dosya yüklenemedi.");
+          alert("Dosya Dönüştürülemedi.");
           document.getElementById("loading").style.display = "none";
         }
       },
@@ -109,5 +119,6 @@ function submitForm() {
     document.getElementById("loading").style.display = "none";
   }
 }
-
-
+function navbar(){
+	document.getElementById("navbarSupportedContent").classList.toggle("collapse");
+}

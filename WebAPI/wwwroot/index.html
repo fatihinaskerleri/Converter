@@ -1,54 +1,207 @@
-<!DOCTYPE html>
-<html lang="Tr">
+<!doctype html>
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotoğraf Dönüştürücü</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- -->
-    <script src="js/main.js"></script>
-    <script src="js/custom-select.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Resim Dönüştürücü</title>
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="jqueryui/jquery-ui.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="fontawesome/css/all.min.css">
+	<script src="bootstrap/js/jquery-3.4.1.min.js"></script>
+	<script src="js/index.js"></script>
 </head>
-<body class="unselectable">
-    <div class="loader" id="loading">
-        <img src="img/rings.svg" alt="" >
-    </div>
-    <div class="top">
-        <h1>Son Yüklenenler</h1>
-            <div class="slider">
-                <div id="light-slider" class="slideshow-container">
-                    
-                    
-                    
-                    <a class="prev controls" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next controls" onclick="plusSlides(1)">&#10095;</a>
-                    
-                    </div>
-            </div>
-    </div>
-    <div class="bottom">
-        
-        <div class="custom-select" style="width:200px;">
-            <select id="extension" >
-              <option value="0">Dönüştürülecek Tür:</option>
-              <option value="jpg">JPG</option>
-              <option value="jpeg">JPEG</option>
-              <option value="png">PNG</option>
-              <option value="gif">GIF</option>
-              <option value="tiff">TIFF</option>
-              <option value="jp2">JP2</option>
-              <option value="webp">WEBP</option>
-            </select>
-        </div>
-        <img src="img/upload.svg" alt="" class="upload" onclick="upload()">
-        <input type="file" id="image" class="hidden" onchange="submitForm()"/>
-    </div>
-    <div class="download hidden">
-        Dosya başarıyla <span id="converted"></span>dönüştürüldü indirmek için<a id="download" href="" download>&nbsp;Tıklayın</a>
-    </div>
+
+<body>
+
+	<section class="container-fluid bolum1">
+
+		<div class="overlay"></div>
+		<div class="container">
+
+			<header class="navbar navbar-expand-md navbar-dark bottom-radius">
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+				<a class="navbar-brand" href="#"> <span class="text-warning">Fotoğraf</span> <span
+						class="text-white">Dönüştürücü</span> </a>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"> <a class="nav-link" href="#">Anasayfa <span
+									class="sr-only">(current)</span></a> </li>
+
+						<li class="nav-item"> <a class="nav-link " href="about.html">Hakkımızda</a> </li>
+						<li class="nav-item"> <a class="nav-link " href="convert.html">Dönüştürme İşlemleri</a> </li>
+
+					</ul>
+				</div>
+			</header>
+
+
+			<div class="row">
+				<div class="col-md-6 text-white p-0 py-4">
+					<h2 class="display-4">Fotoğraf<br>
+						Dönüştürüme Sitesi</h2>
+					<p>Bu sayfa Fırat Üniversitesi ileri programlama dersi kapsamında dr.Fatih Özkaynak tarafından
+						verilen proje kapsamında Cosinüs Sevdalıları grubunun yapmış olduğu görüntü sıkıştırma işlemini
+						yapmak için tasarlanmıştır.
+						<br>
+						Detaylı bilgiye hakkımızda sayfasından ulaşabilirsiniz.
+					</p>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="container bolum3">
+		<p>
+		<h2>Fotoğraf formatları</h2>
+		</p>
+		<p>ve</p>
+		<h3>Algoritmalar</h3>
+
+	</section>
+
+	
+	<section class="container bolum6">
+
+		<div class="row">
+			<div class="col-md-4 mb-2">
+				<div class="card d-block p-3 shadow">
+
+					<div class="card-body">
+						<h5>JPEG Uzantılı Fotoğraf</h5>
+						<p>Bu butona bastığınız zaman yönlendirilen sayfada JPEG uzantılı dosyaların dönüştürme
+							sıkıştırma işlemleri yapılır</p>
+						<span>
+							<a onclick="jpeg()">
+								<button type="button" class="btn btn-outline-danger">JPEG</button>
+							</a>
+						</span>
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="col-md-4 mb-2">
+				<div class="card d-block p-3 shadow">
+
+					<div class="card-body">
+						<h5>PNG Uzantılı Fotoğraf</h5>
+						<p>Bu butona bastığınız zaman yönlendirilen sayfada JPEG uzantılı dosyaların dönüştürme
+							sıkıştırma işlemleri yapılır</p>
+						<span>
+							<a onclick="png()" href="#" target="">
+								<button type="button" class="btn btn-outline-danger">PNG</button>
+							</a>
+						</span>
+					</div>
+				</div>
+
+			</div>
+
+
+
+			<div class="col-md-4 mb-2">
+				<div class="card d-block p-3 shadow">
+
+					<div class="card-body">
+						<h5>GIF Uzantılı Fotoğraf</h5>
+						<p>Bu butona bastığınız zaman yönlendirilen sayfada JPEG uzantılı dosyaların dönüştürme
+							sıkıştırma işlemleri yapılır</p>
+						<span>
+							<a onclick="gif()" href="#" target="">
+								<button type="button" class="btn btn-outline-danger">GIF</button>
+							</a>
+						</span>
+					</div>
+				</div>
+
+			</div>
+
+
+
+			<div class="col-md-4 mb-2">
+				<div class="card d-block p-3 shadow">
+
+					<div class="card-body">
+						<h5>TIFF Uzantılı Fotoğraf</h5>
+						<p>Bu butona bastığınız zaman yönlendirilen sayfada JPEG uzantılı dosyaların dönüştürme
+							sıkıştırma işlemleri yapılır</p>
+						<span>
+							<a onclick="tiff()" href="#" target="">
+								<button type="button" class="btn btn-outline-danger">TIFF</button>
+							</a></span>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-md-4 mb-2">
+				<div class="card d-block p-3 shadow">
+
+					<div class="card-body">
+						<h5>JP2 Uzantılı Fotoğraf</h5>
+						<p>Bu butona bastığınız zaman yönlendirilen sayfada JPEG uzantılı dosyaların dönüştürme
+							sıkıştırma işlemleri yapılır</p>
+						<span>
+							<a onclick="jp2()" href="#" target="">
+								<button type="button" class="btn btn-outline-danger">JP2</button>
+							</a>
+						</span>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-md-4 mb-2">
+				<div class="card d-block p-3 shadow">
+
+					<div class="card-body">
+						<h5>WEBP Uzantılı Fotoğraf</h5>
+						<p>Bu butona bastığınız zaman yönlendirilen sayfada JPEG uzantılı dosyaların dönüştürme
+							sıkıştırma işlemleri yapılır</p>
+						<span>
+							<a onclick="webp()" href="#" target="">
+								<button type="button" class="btn btn-outline-danger">WEBP</button>
+							</a>
+						</span>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+
+		</div>
+	</section>
+
+	
+
+	<footer class="container-fluid">
+		<div class="container">
+			<div class="row">
+
+				<div class="row lisans justify-content-center">Copyright </div>
+
+			</div>
+
+
+	</footer>
+
+
+	
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<script src="jqueryui/jquery-ui.js"></script>
+	
 </body>
+
 </html>

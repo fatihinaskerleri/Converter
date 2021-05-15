@@ -18,7 +18,7 @@ $(document).ready(function () {
 
     $.getJSON("/api/operations/getall", function (result) {
       document.getElementById("title").innerHTML = result.data.length + " işlem listelendi";
-        $.each(result.data, function (i, field) {
+        $.each(result.data.reverse(), function (i, field) {
           
           if(i>=50) {document.getElementById("loading").style.display = "none";return;}
           if(field.donusturulenFormat !="jp2" && field.donusturulenFormat !="tiff"){
@@ -28,7 +28,7 @@ $(document).ready(function () {
             '<img src="/converted/'+field.foto +'" alt=""></a>'+
             '<a href="/converted/'+field.foto +'" target="_blank" download>'+
             '<div class="options"><img class="down-btn" src="./img/direct-download.svg" alt=""></a>'+
-            '<a href="#" onclick=\'Delete('+field.id+',"'+field.foto+'","'+field.ipAdresi+'","'+field.response+'","'+field.istekResponseSure+'","'+field.yuklenenFormat+'","'+field.donusturulenFormat+'")\'><img class="down-btn" src="./img/delete.svg" alt=""></a></div><div class="options">'+field.yuklenenFormat.toUpperCase()+'-'+field.donusturulenFormat.toUpperCase()+'</div></div>';
+            '<a href="#" onclick=\'Delete('+field.id+')\'><img class="down-btn" src="./img/delete.svg" alt=""></a></div><div class="options">'+field.yuklenenFormat.toUpperCase()+'-'+field.donusturulenFormat.toUpperCase()+'</div></div>';
           document.getElementById("content").innerHTML += image;
           }
           
@@ -36,22 +36,45 @@ $(document).ready(function () {
         document.getElementById("loading").style.display = "none";
       });
     });
-    function Delete(id,foto,ipAdresi,response,istekResponseSure,yuklenenFormat,donusturulenFormat){
+    function Delete(id){
       document.getElementById("loading").style.display = "flex";
-      var formdata = {};
-      formdata.id = id;
-      formdata.foto = foto;
-      formdata.ipAdresi = ipAdresi;
-      formdata.response = response;
-      formdata.istekResponseSure = istekResponseSure;
-      formdata.yuklenenFormat = yuklenenFormat;
-      formdata.donusturulenFormat = donusturulenFormat;
-      $.ajax({
+      
+      var url = "/api/operations/delete";
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.setRequestHeader("Authorization", "Bearer "+sessionStorage.getItem("Token"));
+      xhr.onreadystatechange = function () {
+      document.getElementById("loading").style.display = "none";
+        if (xhr.readyState === 4) {
+            
+            var response = JSON.parse(xhr.response);
+            
+            if(response.success)
+            {
+              window.location.reload();
+            }
+            else{
+              console.log(xhr.status);
+              console.log(xhr.responseText);
+              alert(xhr.responseText);
+            }
+            
+            
+        }};
+
+      xhr.send('{"Id": '+id+'}');
+      
+
+      /*$.ajax({
     url: "/api/operations/delete",
     type: "post",
-    headers: {
-      Authorization: 'Bearer '+sessionStorage.getItem("Token")
-    },
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader('Authorization', 'Bearer '+sessionStorage.getItem("Token"));
+  },
+    
     data: JSON.stringify(formdata),
     contentType: "application/json",
     processData: false,
@@ -63,9 +86,12 @@ $(document).ready(function () {
       alert(XMLHttpRequest.responseText);
       document.getElementById("loading").style.display = "none";
    }
-  });
+  });*/
     }
     function logout(){
       sessionStorage.setItem("Login", "False");
       window.location.reload();
+    }
+    function navbar(){
+      document.getElementById("navbarSupportedContent").classList.toggle("collapse");
     }

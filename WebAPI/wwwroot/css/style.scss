@@ -1,11 +1,12 @@
 @import url("reset.css");
 body,
 html {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
 }
 .unselectable {
   -moz-user-select: -moz-none;
@@ -15,37 +16,75 @@ html {
   user-select: none;
 }
 $background-color: #1157c0;
-$background-color: #5b6169;
+$background-color: #474747;
 body {
-  background-color: #f8f8f8;
+  background-color: #0f0f0f;
   overflow: hidden;
   position: relative;
+  .navbar{
+    position: absolute;
+      top: 30px;
+      width: 85%;
+      z-index: 999;
+      
+      
+    }
+    
+    .navbar-brand{
+      font-weight: 600;
+      .text-black{color:#000}
+    }
+    li{
+      margin-left: 15px;
+    }
+    li a{
+      font-size: 15px;
+      color: #fff !important;
+      font-weight: 300;
+      letter-spacing: 1px;
+      transition: 0.2s;
+    }
+    
+    .navbar-nav .active>a,
+    .navbar-nav a:hover{
+      color: #f7b71d !important;
+    }
   .top {
-    background-color: #fff;
+    padding-top: 20px;
+    background-color: $background-color;
+    color:#fff;
     display: flex;
-    margin-top: 100px;
+    margin-top: 110px;
     align-items: center;
     flex-direction: column;
     width: 50%;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-left-radius:10px ;
+    border-top-right-radius:10px ;
     padding-bottom: 15px;
+    
     h1 {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       font-size: 30px;
       font-weight: 900;
       margin-bottom: 10px;
     }
     .slider {
-      max-width: 700px;
+      width: 100%;
       overflow: hidden;
       display: flex;
       flex-direction: row;
       align-items: center;
-      
+      position: relative;
+      #light-slider{
+        max-height: 200px;
+        width: 100%;
+        
+        
+      }
       /* Next & previous buttons */
       .mySlides {
         display: none;
+        width: 100%;
       }
       img {
         
@@ -58,7 +97,7 @@ body {
       /* Slideshow container */
       .slideshow-container {
         max-width: 1000px;
-        position: relative;
+        
         margin: auto;
       }
 
@@ -71,7 +110,7 @@ body {
         width: auto;
         padding: 16px;
         margin-top: -22px;
-        color: rgb(112, 112, 112);
+        color: rgb(255, 255, 255);
         font-weight: bold;
         font-size: 18px;
         transition: 0.6s ease;
@@ -95,12 +134,9 @@ body {
         background-color: #717171;
       }
 
-      /* Fading animation */
+      
       .fade {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 1s;
+        animation: fade 1s forwards;
         display: flex;
       }
 
@@ -122,21 +158,13 @@ body {
         }
       }
 
-      /* On smaller screens, decrease text size */
-      @media only screen and (max-width: 300px) {
-        .prev,
-        .next,
-        .text {
-          font-size: 11px;
-        }
-      }
-      .controls{
-          display: none;
-      }
+      
+      
     }
   }
   .bottom {
-    background-color: #fff;
+    background-color: $background-color;
+    color:#fff;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -148,72 +176,28 @@ body {
       height: 80px;
       cursor: pointer;
     }
-
-    .custom-select {
+    
+    .select-box{
       position: relative;
-      font-family: Arial;
-      margin-right: 15px;
-    }
-
-    .custom-select {
-      select {
-        display: none;
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+      label{
+        position: absolute;
+        top:0;
+        left: 0;
+        font-size: 15px;
       }
-    }
-
-    .select-selected {
-      background-color: $background-color;
-      border-radius: 7px;
-    }
-
-    .select-selected:after {
-      position: absolute;
-      content: "";
-      top: 14px;
-      right: 10px;
-      width: 0;
-      height: 0;
-      border: 6px solid transparent;
-      border-color: #fff transparent transparent transparent;
-    }
-
-    .select-selected {
-      .select-arrow-active:after {
-        border-color: transparent transparent #fff transparent;
-        top: 7px;
+      #extension{
+        margin-right: 15px;
+        width: 160px;
+        border: none;
       }
-    }
-
-    .select-items div,
-    .select-selected {
-      color: #ffffff;
-      padding: 8px 16px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-    }
-
-    .select-items {
-      position: absolute;
-      background-color: $background-color;
-      top: 100%;
-      left: 0;
-      right: 0;
-      z-index: 99;
-      border-radius: 7px;
-    }
-
-    .select-hide {
-      display: none;
-    }
-
-    .select-items div:hover,
-    .same-as-selected {
-      background-color: rgba(0, 0, 0, 0.1);
     }
   }
   .download {
     width: 50%;
-    background-color: rgb(35, 161, 161);
+    background-color: rgb(25, 121, 121);
     color: rgb(248, 236, 236);
     margin: 0 auto auto auto;
     display: flex;
@@ -244,5 +228,31 @@ body {
   img{
     margin: auto;
     width: 200px;
+  }
+}
+.bottom-radius{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+@media only screen and (max-width:768px){
+  .navbar{
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%!important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+  .top,
+  .bottom,
+  .download {
+    width: 100%!important;
   }
 }

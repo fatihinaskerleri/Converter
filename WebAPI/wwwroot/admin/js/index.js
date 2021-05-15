@@ -43,6 +43,7 @@ function submit() {
       else{
         sessionStorage.setItem("Login", "True");
         sessionStorage.setItem("Expiration", response.expiration);
+        sessionStorage.setItem("Token", response.token);
         window.location.reload();
       }
     },
@@ -52,7 +53,9 @@ function submit() {
    }
   });
 }
-
+function navbar(){
+	document.getElementById("navbarSupportedContent").classList.toggle("collapse");
+}
 $(document).ready(function () {
     
 if(sessionStorage.getItem("Login") == "True" )
@@ -63,6 +66,7 @@ if(sessionStorage.getItem("Login") == "True" )
     {
         window.location.href = "/admin/main.html"
     }
+    //eksik kaldı devam edilecek!
     
 }
 else{
