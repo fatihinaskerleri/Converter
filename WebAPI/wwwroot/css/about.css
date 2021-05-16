@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#ourhistory h2 {
+    border-left: 6px solid rgb(127, 74, 197);
+    padding-left: 24px;
+}
+
+.card-text {
+    height: 30px;
+}
+
+.card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+#ourhistory p{
+line-height: 23px;
+}
+
+
+
+.alt-menu{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    font-size: 13px;
+    color: white;
+    background: gray; 
+    padding: 20px;
+    font-size: 15px;
+    justify-content: center;
+}
+
+
+.alt-menu  a{
+    color:white;
+    margin-left: 12px;
+    text-decoration: none;
+}
+.alt-menu  a:hover{
+    color: rgb(238, 199, 26);
+}
+
+/*icon csss*/
+.sosyalikonlar {
+position: fixed;
+top: 100px;
+right: 0px;}
+
+.sosyalikonlar ul {
+list-style-type: none;
+}
+
+.sosyalikonlar ul li a {
+display: inline-block;
+color: #fff;
+padding: 15px 20px;
+text-decoration: none;
+transition: all 0.5s ease;
+border-radius: 10px;
+margin-top: 2px;
+}
+
+
+.sosyalikonlar ul li .youtube {
+    
+background: #bb0000;
+}
+.sosyalikonlar ul li .google {
+background: #116062;
+}
+
+.sosyalikonlar ul li .git{
+background:rgb(40, 40, 66);
+}
+
+.sosyalikonlar ul li a:hover {
+padding: 7px;
+margin: 13px;
+}
+
+.sosyalikonlar ul li a i {
+width: 15px;
+}
