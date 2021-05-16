@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj": {}
+    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj": {
+    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\busra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\obj\\",
+        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -101,14 +101,14 @@
         }
       }
     },
-    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj": {
+    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\busra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -129,8 +129,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj"
+              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj"
               }
             }
           }

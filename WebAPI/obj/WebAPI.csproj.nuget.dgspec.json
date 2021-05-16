@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Business\\Business.csproj": {
+    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Business\\Business.csproj",
+        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\busra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Business\\obj\\",
+        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj"
+              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj"
               }
             }
           }
@@ -104,14 +104,14 @@
         }
       }
     },
-    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj": {
+    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\busra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\obj\\",
+        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -201,14 +201,14 @@
         }
       }
     },
-    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\busra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -229,11 +229,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj"
+              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj"
               },
-              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj"
+              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj"
               }
             }
           }
@@ -273,14 +273,14 @@
         }
       }
     },
-    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj": {
+    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\busra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -301,8 +301,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj"
+              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj"
               }
             }
           }
@@ -338,14 +338,14 @@
         }
       }
     },
-    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\busra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -366,17 +366,17 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Business\\Business.csproj": {
-                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Business\\Business.csproj"
+              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Business\\Business.csproj": {
+                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Business\\Business.csproj"
               },
-              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Core\\Core.csproj"
+              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Core\\Core.csproj"
               },
-              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj"
+              "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj"
               }
             }
           }

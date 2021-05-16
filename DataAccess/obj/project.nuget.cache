@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fqsUBDrAiocYbck47XFs1MR1pU9W1Bz77FpxzCqRLA0M/W1kRio6g5lusp6VFE1Tyh77pNjhrDzXouiBeR86BQ==",
+  "dgSpecHash": "IAbcMJXqyQDWnE6560o8RJotiijAi13I9Hm4ae+ukP6JRJfbj8Pyql0bgVvEmAutPwKDVB6LvtNjTTP49U6q5g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\busra\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\busra\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

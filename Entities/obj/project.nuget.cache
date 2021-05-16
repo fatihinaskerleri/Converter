@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zsIPRlreURpv6iK/SWX65rQERrKg/6dy58j6bwqTZ+RuXQdamYtPyUUvf2+Pg7Qwik8TxCIPrVE/sc6JUdY0Ow==",
+  "dgSpecHash": "9w9FhDjTjWx6Aou+akTJ+vZzAUzDFb+5H3bEBHLNr//dA3Y24TAFi4Nf4d4KAuM69zMz6mdbAJky1MZ2dyrP4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter_Last-main\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Users\\busra\\OneDrive\\Masaüstü\\Converter\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\busra\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\busra\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
